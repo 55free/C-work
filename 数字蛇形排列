@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<stdlib.h>
+int a[5][5];
+void main()
+{
+	
+	int x=0,y=4,i=1,j;
+	a[0][4]=1;
+	while(i<25)
+	{
+		while((x+1<5)&&a[x+1][y]==0)a[++x][y]=++i;
+		while((y-1>=0)&&a[x][y-1]==0)a[x][--y]=++i;
+		while((x-1>=0)&&a[x-1][y]==0)a[--x][y]=++i;
+		while((y+1<5)&&a[x][y+1]==0)a[x][++y]=++i;
+	}
+	for(i=0;i<5;i++)
+	{	for(j=0;j<5;j++)
+			printf("%d\t",a[i][j]);
+	printf("\n");
+	}
+}
